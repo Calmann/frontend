@@ -1,16 +1,16 @@
 
+import ContainerComponent from '../../atoms/ContainerComponent/ContainerComponent';
+import FooterContainerComponent from '../../atoms/FooterContainerComponent/FooterContainerComponent'
+import TextComponent from '../../atoms/TextComponent/TextComponent';
 import './FooterComponent.css'
 
 export default function FooterComponent() {
   return (
-    <div>
-      <nav className='footer-box'>
-        <div className='footer'>
-          <p>© Google 2023</p>
-          <p>version: 0.1.0</p>
-        </div>
-      </nav>
-      <div className='footer-padding'></div>
-    </div>
+    <FooterContainerComponent>
+      <ContainerComponent className='footer'>
+        <TextComponent>© Google 2023</TextComponent>
+        <TextComponent>version: 0.1.0</TextComponent>
+      </ContainerComponent>
+    </FooterContainerComponent>
   );
 }

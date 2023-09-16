@@ -1,0 +1,10 @@
+.logo-navbar {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.input-flex {
+    display: flex;
+    align-items: bottom;
+    margin-bottom: -20px;
+}

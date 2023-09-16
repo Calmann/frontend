@@ -7,6 +7,10 @@ import profile from '../../../../assets/profile.png';
 import './NavbarComponent.css'
 import React from 'react';
 import NavbarContainerComponent from '../../atoms/NavbarContainerComponent/NavbarContainerComponent';
+import ContainerComponent from '../../atoms/ContainerComponent/ContainerComponent';
+import TextComponent from '../../atoms/TextComponent/TextComponent';
+import ImageComponent from '../../atoms/ImageComponent/ImageComponent';
+import InputComponent from '../../atoms/InputComponent/InputComponent';
 
 type NavbarComponentProps = {
   isSearch: boolean;
@@ -16,22 +20,22 @@ type NavbarComponentProps = {
 
 export default function NavbarComponent(props: NavbarComponentProps) {
   return (
-      <NavbarContainerComponent>
-        <div className='navbar'>
-          {!props.isSearch
-            ? <p><b>Agile Content</b> Frontend Test</p>
-            : <div className='input-flex'>
-              <img src={logo} className='logo-navbar' />
-              <div className='input-box'>
-                <FaSearch />
-                <input className='input' value={props.search} onChange={input => props.setSearch(input.target.value)} />
-              </div>
-            </div>}
-          <div className='navbar-menu'>
-            <img src={profile} className='profile' />
-            <FaGripVertical />
-          </div>
-        </div>
-      </NavbarContainerComponent>
+    <NavbarContainerComponent>
+      <ContainerComponent className='navbar'>
+        {!props.isSearch
+          ? <TextComponent><strong>Agile Content</strong> Frontend Test</TextComponent>
+          : <ContainerComponent className='input-flex'>
+            <ImageComponent src={logo} className='logo-navbar' />
+            <ContainerComponent className='input-box'>
+              <FaSearch />
+              <InputComponent className='input' value={props.search} onChange={input => props.setSearch(input.target.value)} />
+            </ContainerComponent>
+          </ContainerComponent>}
+        <ContainerComponent className='navbar-menu'>
+          <ImageComponent src={profile} className='profile' />
+          <FaGripVertical />
+        </ContainerComponent>
+      </ContainerComponent>
+    </NavbarContainerComponent>
   );
 }

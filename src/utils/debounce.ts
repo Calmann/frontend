@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 export function useDebounce(
   initialValue: string,
-  delay: number = 1000
+  delay: number = 1000,
 ): [string, string, React.Dispatch<React.SetStateAction<string>>] {
   const [value, setValue] = React.useState(initialValue);
   const [debouncedValue, setDebouncedValue] = React.useState(value);

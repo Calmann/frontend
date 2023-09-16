@@ -1,14 +1,13 @@
-import { FC } from 'react';
-import { Outlet, Route, Routes } from 'react-router-dom';
-import SearchPage from '../views/SearchPage/SearchPage';
+import { FC } from "react";
+import { Outlet, Route, Routes } from "react-router-dom";
+import SearchPage from "../views/SearchPage/SearchPage";
 
-export type Permissions = 'AttendanceManager';
+export type Permissions = "AttendanceManager";
 function MainPage() {
-
   return (
     <main>
       <div>
-          <Outlet />
+        <Outlet />
       </div>
     </main>
   );
@@ -17,11 +16,8 @@ function MainPage() {
 export const RoutesComponent: FC = () => {
   return (
     <>
-    <Routes>
-        <Route
-          path="/"
-          element={<MainPage />}
-        >
+      <Routes>
+        <Route path="/" element={<MainPage />}>
           <Route index element={<SearchPage />} />
         </Route>
       </Routes>

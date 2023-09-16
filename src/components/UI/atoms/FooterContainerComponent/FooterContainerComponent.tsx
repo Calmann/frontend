@@ -1,17 +1,16 @@
-
-import './FooterContainerComponent.css'
+import "./FooterContainerComponent.css";
 
 type FooterContainerComponentProps = {
   children: React.ReactNode;
-}
+};
 
-export default function FooterContainerComponent(props: FooterContainerComponentProps) {
+export default function FooterContainerComponent(
+  props: FooterContainerComponentProps,
+) {
   return (
     <>
-      <div className='footer-box'>
-        {props.children}
-      </div>
-      <div className='footer-padding'></div>
+      <div className="footer-box">{props.children}</div>
+      <div className="footer-padding"></div>
     </>
   );
 }
